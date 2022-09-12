@@ -1,13 +1,13 @@
 import {useEffect, useState} from "react";
 import Doctor from "../Doctor/Doctor";
+import axios from "axios";
 
 function Doctors() {
    const [doctorsData, setDoctorsData] = useState([]);
 
    const getDoctorsInfo = async () => {
-      const doctors = await fetch('https://h4s-backend.herokuapp.com/api/doctor')
-      const res = await doctors.json();
-      setDoctorsData(res);
+      const doctors = await axios.get('https://h4s-backend.herokuapp.com/api/doctor');
+      setDoctorsData(doctors.data);
    }
 
    useEffect(() => {
@@ -15,7 +15,11 @@ function Doctors() {
    }, [])
 
    return (
-      <Doctor doctor={doctorsData}/>
+       <>
+          {doctorsData.map((doctor) => (
+            <Doctor key={doctor.id} doctor={doctor}/>
+          ))}
+       </>
    );
 }
 

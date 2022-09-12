@@ -15,17 +15,19 @@ function Doctors() {
   }, []);
 
   return (
-    <>
-      {doctorsData.map((doctor) => (
-        <Doctor
-          key={doctor.id}
-          fullName={doctor.fullName}
-          specialization={doctor.specialization}
-          office={doctor.office}
-          receptionTime={doctor.receptionTime}
-        />
-      ))}
-    </>
+      <>
+        {doctorsData.map((doctor) => (
+            <ul>
+              <Doctor
+                  key={doctor.id}
+                  fullName={doctor.fullName}
+                  specialization={doctor.specialization}
+                  office={doctor.office}
+                  receptionTime={doctor.receptionTime}
+              />
+            </ul>
+        ))}
+      </>
   );
 }
 

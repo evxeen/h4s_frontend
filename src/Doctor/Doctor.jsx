@@ -1,18 +1,20 @@
-function Doctor({ fullName, specialization, office, receptionTime }) {
+function Doctor({ doctor }) {
+   const {fullName, specialization, office, receptionTime} = doctor;
+
   return (
-      <li>
-         <span>{fullName}</span>
-         <span>Специальность: {specialization}</span>
-         <span>Кабинет: {office}</span>
-         <span>
+      <div>
+         <div>{fullName}</div>
+         <div>Специальность: {specialization}</div>
+         <div>Кабинет: {office}</div>
+         <div>
             Время приема:
             {receptionTime.map((date) => (
-                <span key={date.day}>
+                <div key={date.day}>
             день: {date.day}, время: {date.time}
-          </span>
+          </div>
             ))}
-         </span>
-      </li>
+         </div>
+      </div>
   );
 }
 

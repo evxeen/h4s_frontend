@@ -1,7 +1,7 @@
+import Doctors from "./Doctors/Doctors";
+
 function App() {
-  return (
-      <h1>hello</h1>
-  );
+  return <Doctors />;
 }
 
 export default App;

@@ -15,9 +15,8 @@ function Doctors() {
   }, []);
 
   return (
-      <>
-        {doctorsData.map((doctor) => (
-            <ul>
+      <ul>
+          {doctorsData.map((doctor) => (
               <Doctor
                   key={doctor.id}
                   fullName={doctor.fullName}
@@ -25,9 +24,8 @@ function Doctors() {
                   office={doctor.office}
                   receptionTime={doctor.receptionTime}
               />
-            </ul>
-        ))}
-      </>
+          ))}
+      </ul>
   );
 }
 

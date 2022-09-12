@@ -1,18 +1,18 @@
 function Doctor({ fullName, specialization, office, receptionTime }) {
   return (
-      <>
-         <li>{fullName}</li>
-         <li>Специальность: {specialization}</li>
-         <li>Кабинет: {office}</li>
-         <li>
+      <li>
+         <span>{fullName}</span>
+         <span>Специальность: {specialization}</span>
+         <span>Кабинет: {office}</span>
+         <span>
             Время приема:
             {receptionTime.map((date) => (
                 <span key={date.day}>
             день: {date.day}, время: {date.time}
           </span>
             ))}
-         </li>
-      </>
+         </span>
+      </li>
   );
 }
 
